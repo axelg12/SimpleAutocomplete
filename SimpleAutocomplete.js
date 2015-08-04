@@ -24,24 +24,27 @@ class SimpleAutocomplete extends Component {
     this.props.onTyping(text);
   }
   _renderRow(displayName) {
+    var dropdownRowStyle = [styleComponent.autocompleteListRow, this.props.dropdownRowStyle];
     return (
       <TouchableHighlight
         onPress={this.onSelect.bind(this, displayName)}
         style={styleComponent.plusButton}>
-        <Text style={styleComponent.autocompleteListRow}>{displayName}</Text>
+        <Text style={dropdownRowStyle}>{displayName}</Text>
       </TouchableHighlight>
     );
   }
   render() {
+    var textInput = [styleComponent.autocompleteInput, this.props.textInputStyle];
+    var dropdown = [styleComponent.autocompleteList, this.props.dropdownStyle];
     return (
       <View styleComponent={styleComponent.mainContainer}>
       <TextInput
-          style={styleComponent.autocompleteInput}
+          style={textInput}
           onChangeText={this.onTyping.bind(this)}
           value={this.state.text}
         />
         <ListView
-          style={styleComponent.autocompleteList}
+          style={dropdown}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => this._renderRow(rowData)}
           />
