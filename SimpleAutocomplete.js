@@ -8,15 +8,15 @@ var {
     ListView,
     TouchableHighlight,
 } = React;
-var styleComponent = StyleSheet.create(require('./AutoComplete'));
+var styleComponent = StyleSheet.create(require('./defaultStyles'));
 class SimpleAutocomplete extends Component {
   propTypes: {
     onSelect: React.PropTypes.func.isRequired,
     onTyping: React.PropTypes.func.isRequired,
     data: React.PropTypes.array.isRequired,
+    placeholder: React.PropTypes.string,
   }
   componentWillReceiveProps(nextProps) {
-    console.log('whoo', nextProps.data);
     this.setState({dataSource: this.state.dataSource.cloneWithRows(nextProps.data)});
   }
   onTyping(text) {
@@ -45,6 +45,8 @@ class SimpleAutocomplete extends Component {
         />
         <ListView
           style={dropdown}
+          placeholder={this.props.placeholder}
+          automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => this._renderRow(rowData)}
           />
