@@ -8,7 +8,7 @@ var {
     ListView,
     TouchableHighlight,
 } = React;
-var styleComponent = StyleSheet.create(require('../../styles/AutoComplete'));
+var styleComponent = StyleSheet.create(require('./AutoComplete'));
 class SimpleAutocomplete extends Component {
   propTypes: {
     onSelect: React.PropTypes.func.isRequired,
