@@ -39,13 +39,13 @@ class SimpleAutocomplete extends Component {
     return (
       <View styleComponent={styleComponent.mainContainer}>
       <TextInput
+          placeholder={this.props.placeholder}
           style={textInput}
           onChangeText={this.onTyping.bind(this)}
           value={this.state.text}
         />
         <ListView
           style={dropdown}
-          placeholder={this.props.placeholder}
           automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
           renderRow={(rowData) => this._renderRow(rowData)}
