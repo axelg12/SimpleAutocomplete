@@ -13,10 +13,13 @@ module.exports = {
   autocompleteList: {
     borderColor: '#48BBEC',
     margin: 0,
-    backgroundColor: '#CCC',
   },
   autocompleteListRow: {
     fontSize: 15,
     marginBottom: 10,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: '#CCCCCC',
   },
 };
