@@ -27,6 +27,6 @@ I've allowed for passage for some special props to be used
 + onTyping (Required): A function that is called when user is typing into the TextInput. Used to filter the data passed to the ListView
 + data (Required): Array of strings to be passed down to the ListView
 + placeholder (Required): Placeholder for the TextInput
-+ dropdownRowStyle: Styling for ListView
++ dropdownRowStyle: Styling for the ListView Row
 + textInputStyle: Styling for the TextInput
-+ dropdownStyle: Styling for the ListView Row
++ dropdownStyle: Styling for ListView
