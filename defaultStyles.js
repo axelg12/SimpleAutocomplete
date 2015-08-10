@@ -20,6 +20,6 @@ module.exports = {
   },
   separator: {
     height: 1,
-    backgroundColor: '#CCCCCC',
+    backgroundColor: '#CDCDCD',
   },
 };
