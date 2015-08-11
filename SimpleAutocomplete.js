@@ -36,8 +36,10 @@ class SimpleAutocomplete extends Component {
     return (
       <TouchableHighlight
         onPress={this.onSelect.bind(this, obj)}>
-        <Text style={dropdownRowStyle}>{obj.displayString}</Text>
-        <View style={styleComponent.separator} />
+        <View>
+          <Text style={dropdownRowStyle}>{obj.displayString}</Text>
+          <View style={styleComponent.separator} />
+        </View>
       </TouchableHighlight>
     );
   }
