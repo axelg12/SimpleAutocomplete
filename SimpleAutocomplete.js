@@ -9,6 +9,14 @@ var {
     TouchableHighlight,
 } = React;
 var styleComponent = StyleSheet.create(require('./defaultStyles'));
+/* 
+* onSelect: Callback function that is called when user selects item from the listview
+* onTyping: Callback function to update the autocomplete list
+* data: Object containing whatever you like, only thing is needs to contain
+*       is a key called displayString which will be used to populate the 
+*       listview
+* Placeholder: Placeholder for the textinput
+**/
 class SimpleAutocomplete extends Component {
   propTypes: {
     onSelect: React.PropTypes.func.isRequired,
@@ -23,12 +31,12 @@ class SimpleAutocomplete extends Component {
     this.setState({text});
     this.props.onTyping(text);
   }
-  _renderRow(displayName) {
+  _renderRow(obj) {
     var dropdownRowStyle = [styleComponent.autocompleteListRow, this.props.dropdownRowStyle];
     return (
       <TouchableHighlight
-        onPress={this.onSelect.bind(this, displayName)}>
-        <Text style={dropdownRowStyle}>{displayName}</Text>
+        onPress={this.onSelect.bind(this, obj)}>
+        <Text style={dropdownRowStyle}>{obj.displayString}</Text>
         <View style={styleComponent.separator} />
       </TouchableHighlight>
     );
@@ -53,8 +61,8 @@ class SimpleAutocomplete extends Component {
       </View>
     );
   }
-  onSelect(displayName) {
-    this.props.onSelect(displayName);
+  onSelect(obj) {
+    this.props.onSelect(obj);
   }
   constructor(props) {
     super(props);
