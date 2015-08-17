@@ -58,6 +58,7 @@ class SimpleAutocomplete extends Component {
           onChangeText={this.onTyping.bind(this)}
           value={this.state.text}
         />
+        <View style={styleComponent.separator} />
         <ListView
           style={dropdown}
           automaticallyAdjustContentInsets={false}
