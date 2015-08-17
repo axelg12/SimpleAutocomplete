@@ -1,4 +1,5 @@
 # SimpleAutocomplete
+ATTENTION: From version 0.2 I had to make some changes to make this fit to the Dohop Search Autocompleter. Sorry for any inconvenience. If you want please make a issue if you want me to fix this or keep using 0.1
 This is just a simple Autocompleter/Typeahead that uses TextInput to filter/populate a listview that is rendered below. Pure react-native solution
 
 You can pass any prop you could normally pass down to both TextInput and ListView

@@ -33,11 +33,15 @@ class SimpleAutocomplete extends Component {
   }
   _renderRow(obj) {
     var dropdownRowStyle = [styleComponent.autocompleteListRow, this.props.dropdownRowStyle];
-    return (
+   return (
       <TouchableHighlight
         onPress={this.onSelect.bind(this, obj)}>
         <View>
-          <Text style={dropdownRowStyle}>{obj.displayString}</Text>
+          <View style={{flexDirection: 'row', flex: 1}}>
+            <Text style={{fontWeight: 'bold', marginRight: 10}}>{obj.airportCodes}</Text>
+            <Text style={dropdownRowStyle}>{obj.displayString}</Text>
+          </View>
+          <Text style={{fontSize: 10}}>{obj.country}</Text>
           <View style={styleComponent.separator} />
         </View>
       </TouchableHighlight>

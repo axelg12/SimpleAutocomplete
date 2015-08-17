@@ -16,10 +16,11 @@ module.exports = {
   },
   autocompleteListRow: {
     fontSize: 15,
-    marginBottom: 10,
   },
   separator: {
     height: 1,
     backgroundColor: '#CDCDCD',
+    marginTop: 15,
+    marginBottom: 15,
   },
 };
