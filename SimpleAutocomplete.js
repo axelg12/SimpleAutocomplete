@@ -38,7 +38,7 @@ class SimpleAutocomplete extends Component {
         onPress={this.onSelect.bind(this, obj)}>
         <View>
           <View style={{flexDirection: 'row', flex: 1}}>
-            <Text style={{fontWeight: 'bold', marginRight: 10}}>{obj.airportCodes}</Text>
+            <Text style={{fontWeight: 'bold', marginRight: 10}}>{obj.displayAirportCode}</Text>
             <Text style={dropdownRowStyle}>{obj.displayString}</Text>
           </View>
           <Text style={{fontSize: 10}}>{obj.country}</Text>
