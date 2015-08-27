@@ -35,6 +35,8 @@ class SimpleAutocomplete extends Component {
     var dropdownRowStyle = [styleComponent.autocompleteListRow, this.props.dropdownRowStyle];
    return (
       <TouchableHighlight
+        activeOpacity={0.2}
+        underlayColor={'#ffffff'}
         onPress={this.onSelect.bind(this, obj)}>
         <View>
           <View style={{flexDirection: 'row', flex: 1}}>
