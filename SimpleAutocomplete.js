@@ -33,25 +33,30 @@ class SimpleAutocomplete extends Component {
   }
   _renderRow(obj) {
     var dropdownRowStyle = [styleComponent.autocompleteListRow, this.props.dropdownRowStyle];
+    var dropdownContainerRowStyle = [styleComponent.resultRow, this.props.dropdownContainerRowStyle];
+    var separator = [styleComponent.separator, this.props.separatorStyle];
    return (
-      <TouchableHighlight
-        activeOpacity={0.2}
-        underlayColor={'#ffffff'}
-        onPress={this.onSelect.bind(this, obj)}>
-        <View>
-          <View style={{flexDirection: 'row', flex: 1}}>
-            <Text style={{fontWeight: 'bold', marginRight: 10}}>{obj.displayAirportCode}</Text>
-            <Text style={dropdownRowStyle}>{obj.displayString}</Text>
+      <View>
+        <TouchableHighlight
+          activeOpacity={0.2}
+          underlayColor={'#ffffff'}
+          onPress={this.onSelect.bind(this, obj)}>
+          <View style={dropdownContainerRowStyle}>
+            <View style={{flexDirection: 'row', flex: 1}}>
+              <Text style={{fontWeight: 'bold', marginRight: 10}}>{obj.displayAirportCode}</Text>
+              <Text style={dropdownRowStyle}>{obj.displayString}</Text>
+            </View>
+            <Text style={{fontSize:10}}>{obj.country}</Text>
           </View>
-          <Text style={{fontSize: 10}}>{obj.country}</Text>
-          <View style={styleComponent.separator} />
-        </View>
-      </TouchableHighlight>
+        </TouchableHighlight>
+        <View style={styleComponent.separator} />
+      </View>
     );
   }
   render() {
     var textInput = [styleComponent.autocompleteInput, this.props.textInputStyle];
     var dropdown = [styleComponent.autocompleteList, this.props.dropdownStyle];
+    var leadingSeparator = [styleComponent.leadingSeparator, this.props.leadingSeparatorStyle];
     return (
       <View styleComponent={styleComponent.mainContainer}>
       <TextInput
@@ -60,7 +65,7 @@ class SimpleAutocomplete extends Component {
           onChangeText={this.onTyping.bind(this)}
           value={this.state.text}
         />
-        <View style={styleComponent.separator} />
+        <View style={styleComponent.leadingSeparator} />
         <ListView
           style={dropdown}
           automaticallyAdjustContentInsets={false}

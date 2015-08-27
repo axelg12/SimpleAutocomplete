@@ -29,5 +29,8 @@ I've allowed for passage for some special props to be used
 + data (Required): Array of strings to be passed down to the ListView
 + placeholder (Required): Placeholder for the TextInput
 + dropdownRowStyle: Styling for the ListView Row
++ dropdownContainerRowStyle: Styling for each View that contains each Row in the ListView
 + textInputStyle: Styling for the TextInput
 + dropdownStyle: Styling for ListView
++ separatorStyle: Styling for separators
++ leadingSeparatorStyle: Styling for the leading separator (some might want different margin below the TextInput or hide this separator all together)
