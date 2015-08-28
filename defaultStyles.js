@@ -7,8 +7,6 @@ module.exports = {
   autocompleteInput: {
     height: 40,
     flexDirection: 'column',
-    borderColor: 'lightblue',
-    borderWidth: 1,
   },
   autocompleteList: {
     borderColor: '#48BBEC',
@@ -17,10 +15,17 @@ module.exports = {
   autocompleteListRow: {
     fontSize: 15,
   },
-  separator: {
-    height: 1,
-    backgroundColor: '#CDCDCD',
+  resultRow: {
     marginTop: 15,
     marginBottom: 15,
   },
+  separator: {
+    height: 1,
+    backgroundColor: '#CDCDCD',
+  },
+  leadingSeparator: {
+    marginTop:15,
+    height: 1,
+    backgroundColor: '#CDCDCD',
+  }
 };
