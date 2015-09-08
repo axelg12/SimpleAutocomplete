@@ -67,6 +67,8 @@ class SimpleAutocomplete extends Component {
         />
         <View style={styleComponent.leadingSeparator} />
         <ListView
+          keyboardShouldPersistTaps={true}
+          keyboardDismissMode='on-drag'
           style={dropdown}
           automaticallyAdjustContentInsets={false}
           dataSource={this.state.dataSource}
