@@ -6,6 +6,8 @@ module.exports = {
   },
   autocompleteInput: {
     height: 40,
+    paddingLeft: 5,
+    paddingRight: 5,
     flexDirection: 'column',
   },
   autocompleteList: {
