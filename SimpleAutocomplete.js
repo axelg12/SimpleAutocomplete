@@ -24,6 +24,7 @@ class SimpleAutocomplete extends Component {
     data: React.PropTypes.array.isRequired,
     placeholder: React.PropTypes.string,
     autoFocus: React.PropTypes.bool,
+    autoCorrect: React.PropTypes.bool,
   }
   componentWillReceiveProps(nextProps) {
     this.setState({dataSource: this.state.dataSource.cloneWithRows(nextProps.data)});
@@ -66,6 +67,7 @@ class SimpleAutocomplete extends Component {
           onChangeText={this.onTyping.bind(this)}
           value={this.state.text}
           autoFocus={this.props.autoFocus}
+          autoCorrect={this.props.autoCorrect}
         />
         <View style={styleComponent.leadingSeparator} />
         <ListView
