@@ -18,14 +18,6 @@ var styleComponent = StyleSheet.create(require('./defaultStyles'));
 * Placeholder: Placeholder for the textinput
 **/
 class SimpleAutocomplete extends Component {
-  propTypes: {
-    onSelect: React.PropTypes.func.isRequired,
-    onTyping: React.PropTypes.func.isRequired,
-    data: React.PropTypes.array.isRequired,
-    placeholder: React.PropTypes.string,
-    autoFocus: React.PropTypes.bool,
-    autoCorrect: React.PropTypes.bool,
-  }
   componentWillReceiveProps(nextProps) {
     this.setState({dataSource: this.state.dataSource.cloneWithRows(nextProps.data)});
   }
@@ -91,5 +83,14 @@ class SimpleAutocomplete extends Component {
       dataSource: new ListView.DataSource({rowHasChanged: (row1, row2) => row1 !== row2}),
     };
   }
+}
+
+SimpleAutocomplete.propTypes = {
+  onSelect: React.PropTypes.func.isRequired,
+  onTyping: React.PropTypes.func.isRequired,
+  data: React.PropTypes.array.isRequired,
+  placeholder: React.PropTypes.string,
+  autoFocus: React.PropTypes.bool,
+  autoCorrect: React.PropTypes.bool,
 }
 module.exports = SimpleAutocomplete;
