@@ -1,23 +1,23 @@
-var React = require('react-native');
+var React = require('react');
+var ReactNative = require('react-native');
 var {
-    Component,
     StyleSheet,
     View,
     Text,
     TextInput,
     ListView,
     TouchableHighlight,
-} = React;
+} = ReactNative;
 var styleComponent = StyleSheet.create(require('./defaultStyles'));
-/* 
+/*
 * onSelect: Callback function that is called when user selects item from the listview
 * onTyping: Callback function to update the autocomplete list
 * data: Object containing whatever you like, only thing is needs to contain
-*       is a key called displayString which will be used to populate the 
+*       is a key called displayString which will be used to populate the
 *       listview
 * Placeholder: Placeholder for the textinput
 **/
-class SimpleAutocomplete extends Component {
+class SimpleAutocomplete extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.setState({dataSource: this.state.dataSource.cloneWithRows(nextProps.data)});
   }
